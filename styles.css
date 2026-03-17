@@ -1,0 +1,747 @@
+:root {
+  --ink: #111111;
+  --paper: #f3f4f5;
+  --accent: #0f4cbe;
+  --accent-soft: #90b7ff;
+  --line: #d8dbe2;
+  --gold: #f3bf2d;
+  --hero-athlete-opacity: 1;
+  --bg-athlete-opacity: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.home-cover {
+  position: relative;
+}
+
+.home-cover::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("Van Ginkel no bkg.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: min(64vw, 740px);
+  opacity: var(--bg-athlete-opacity);
+  transition: opacity 0.12s linear;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+.cover-topline,
+.eyebrow,
+.scroll-banner p {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.floating-header {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 30;
+}
+
+.floating-header-right {
+  left: auto;
+  right: 14px;
+  top: 12px;
+  z-index: 32;
+}
+
+.home-cover .floating-header {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.home-cover .floating-header-right {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.home-cover.reveal-ui .floating-header {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.menu-toggle {
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(17, 17, 17, 0.45);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  display: grid;
+  gap: 5px;
+  align-content: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+}
+
+.slideout-menu {
+  margin-top: 12px;
+  padding: 12px;
+  width: 220px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.95);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slideout-menu.open {
+  display: flex;
+}
+
+.slideout-menu a {
+  font-weight: 700;
+}
+
+.floating-header-right .slideout-menu {
+  position: absolute;
+  right: 0;
+  margin-top: 8px;
+}
+
+.scroll-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-120%);
+  transition: transform 0.28s ease;
+  z-index: 25;
+  background: linear-gradient(90deg, #0a0a0a, #1f1f1f);
+  color: #ffffff;
+  border-bottom: 2px solid var(--gold);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 18px;
+}
+
+.scroll-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 26;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 12px;
+  min-height: 69px;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.18);
+  backdrop-filter: blur(8px);
+  transform: translateY(-120%);
+  transition: transform 0.28s ease;
+}
+
+.scroll-header.visible {
+  transform: translateY(0);
+}
+
+.scroll-header img {
+  position: absolute;
+  left: 8px;
+  top: 58%;
+  transform: translateY(-50%);
+  height: 116px;
+  width: auto;
+  object-fit: contain;
+}
+
+.scroll-header-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.8vw, 22px);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+
+.scroll-header-nav a {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.04em;
+  font-size: clamp(0.88rem, 1.25vw, 1.08rem);
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.scroll-header-nav a.is-active {
+  background: #0f4cbe;
+  color: #ffffff;
+}
+
+.home-cover .scroll-banner {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.home-cover .scroll-header {
+  pointer-events: none;
+}
+
+.home-cover.reveal-ui .scroll-header {
+  pointer-events: auto;
+}
+
+.home-cover.reveal-ui .scroll-banner {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-banner.visible {
+  transform: translateY(0);
+}
+
+.scroll-banner p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.scroll-banner a {
+  border: 1px solid #ffffff;
+  padding: 6px 12px;
+  font-weight: 700;
+}
+
+.cover-hero {
+  min-height: 100vh;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: 5px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.cover-topline {
+  width: fit-content;
+  margin: 0 auto;
+  border: 2px solid var(--line);
+  padding: 6px 18px;
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.logo-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
+  margin-top: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cover-logo {
+  width: 95vw;
+  max-width: 1600px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.88;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.12));
+}
+
+.cover-athlete {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: min(900px, 72vw);
+  height: 92vh;
+  object-fit: contain;
+  object-position: bottom center;
+  z-index: 3;
+  animation: rise-in 0.9s ease both;
+  opacity: var(--hero-athlete-opacity);
+}
+
+.hero-side-words {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  font-family: "Cinzel", "Times New Roman", serif;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero-side-words span {
+  position: absolute;
+  bottom: clamp(12px, 4vh, 48px);
+  transform: none;
+  font-size: clamp(1.85rem, 5.1vw, 4.8rem);
+  color: rgba(17, 17, 17, 0.88);
+  text-shadow: none;
+}
+
+.left-word {
+  left: calc(clamp(14px, 4vw, 54px) + 92px);
+}
+
+.right-word {
+  right: calc(clamp(14px, 4vw, 54px) + 177px);
+}
+
+.ghost {
+  position: absolute;
+  bottom: 2vh;
+  width: min(760px, 55vw);
+  height: min(760px, 55vw);
+  background-image: url("van-ginkel.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.12;
+  filter: grayscale(100%);
+}
+
+.athlete-ghost-left {
+  left: 12%;
+  transform: scale(0.88);
+}
+
+.athlete-ghost-right {
+  right: 10%;
+  transform: scale(0.86);
+}
+
+.cover-story {
+  position: absolute;
+  z-index: 4;
+  max-width: 280px;
+}
+
+.cover-kicker {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.cover-story-left {
+  left: 5vw;
+  bottom: 16vh;
+}
+
+.cover-story-left h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.7rem);
+  line-height: 0.9;
+}
+
+.cover-story-left p {
+  margin: 6px 0 0;
+  font-size: 1.15rem;
+}
+
+.cover-story-right {
+  right: 3vw;
+  top: 30vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cover-story-right a {
+  border-left: 3px solid var(--accent);
+  padding: 7px 10px;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.cover-story-right a:hover {
+  transform: translateX(-6px);
+}
+
+.cover-story-right span {
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.hero-cta {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 5;
+}
+
+.btn {
+  padding: 12px 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: 2px solid var(--accent);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid var(--ink);
+}
+
+.content-section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 78px 20px;
+  border-top: 1px solid rgba(17, 17, 17, 0.16);
+}
+
+.section-header {
+  margin-bottom: 26px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.section-header h2 {
+  margin: 3px 0 0;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.76);
+  padding: 16px;
+  min-height: 170px;
+}
+
+.editorial-links {
+  display: grid;
+  gap: 14px;
+}
+
+.editorial-links a {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 0.94;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.25);
+  padding-bottom: 8px;
+}
+
+.editorial-links a:hover {
+  color: var(--accent);
+}
+
+.legacy-coach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.legacy-coach-card {
+  display: block;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(17, 17, 17, 0.16);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.legacy-coach-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.14);
+}
+
+.legacy-coach-card img {
+  width: 100%;
+  height: clamp(220px, 30vw, 340px);
+  object-fit: cover;
+  display: block;
+}
+
+.legacy-coach-meta {
+  padding: 12px 12px 14px;
+}
+
+.legacy-coach-meta h3 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+}
+
+.legacy-coach-meta p {
+  margin: 4px 0 0;
+  font-size: 0.98rem;
+}
+
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+blockquote {
+  margin: 0;
+  padding: 8px 0;
+  border-left: none;
+  background: transparent;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.clean-quotes blockquote {
+  font-size: clamp(1.2rem, 2.6vw, 1.65rem);
+}
+
+.mission-content {
+  max-width: 880px;
+}
+
+.mission-content p {
+  font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+  line-height: 1.35;
+  margin: 0 0 14px;
+}
+
+.mission-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 10px;
+}
+
+.mission-photo-grid img {
+  width: 100%;
+  height: clamp(160px, 18vw, 220px);
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.mission-content .btn {
+  margin-top: 8px;
+}
+
+.sponsor-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.sponsor-logos img {
+  width: 100%;
+  height: 95px;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.clean-sponsor-logos {
+  align-items: center;
+}
+
+.registration-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 2px solid var(--ink);
+}
+
+.page-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 120px 20px 70px;
+}
+
+.page-wrap h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  margin: 0 0 10px;
+}
+
+.page-wrap p,
+.page-wrap li {
+  font-size: 1.1rem;
+}
+
+.list-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.video-embed {
+  width: min(860px, 100%);
+  margin: 10px 0 20px;
+  aspect-ratio: 560 / 314;
+}
+
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .scroll-header {
+    gap: 4px;
+    padding: 6px 8px;
+    min-height: 60px;
+  }
+
+  .scroll-header img {
+    left: 6px;
+    top: 58%;
+    height: 95px;
+  }
+
+  .scroll-header-nav {
+    gap: 4px;
+  }
+
+  .scroll-header-nav a {
+    font-size: 0.78rem;
+    padding: 3px 5px;
+  }
+
+
+  .logo-wrap {
+    top: 8vh;
+  }
+
+  .cover-logo {
+    width: min(96vw, 86vh);
+    height: min(96vw, 86vh);
+  }
+
+  .cover-athlete {
+    width: 96vw;
+    opacity: 1;
+    bottom: 0;
+  }
+
+  .hero-side-words span {
+    bottom: 10px;
+    font-size: clamp(1.6rem, 8vw, 2.6rem);
+  }
+
+  .left-word {
+    left: 8px;
+  }
+
+  .right-word {
+    right: 8px;
+  }
+
+  .ghost {
+    display: none;
+  }
+
+  .cover-story-left,
+  .cover-story-right {
+    position: static;
+    max-width: none;
+  }
+
+  .cover-story-right {
+    margin-top: 16px;
+  }
+
+  .cover-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 90px;
+  }
+
+  .hero-cta {
+    position: static;
+    transform: none;
+    margin-top: auto;
+    flex-wrap: wrap;
+  }
+
+  .sponsor-logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .legacy-coach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .scroll-banner {
+    justify-content: space-between;
+    gap: 10px;
+    padding-right: 10px;
+  }
+
+  .scroll-banner p {
+    font-size: 1rem;
+  }
+}
