@@ -1215,6 +1215,35 @@ blockquote {
   color: rgba(17, 17, 17, 0.45);
 }
 
+.logo-email-section {
+  background: #f8f9fa;
+  border-left: 4px solid #0f4cbe;
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin-top: 6px;
+}
+
+.logo-email-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.logo-email-section p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.logo-email-section a {
+  color: #0f4cbe;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.logo-email-section a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .sponsor-registration-layout {
     grid-template-columns: 1fr;
