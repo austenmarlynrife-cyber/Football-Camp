@@ -38,7 +38,7 @@
   <main class="page-wrap">
     <h1>Camp Gallery</h1>
     <p>Relive highlights from past sessions, skills drills, and community events.</p>
-    <div class="sponsor-logos">
+    <div class="sponsor-logos gallery-grid" id="camp-gallery">
       <img src="harrisonphillipspic1.webp" alt="Camp action one">
       <img src="harrisonphillipspic3.webp" alt="Camp action two">
       <img src="harrisonphillipspic6.webp" alt="Camp action three">
@@ -73,6 +73,13 @@
       <img src="camppic29.jpg" alt="Camp photo 29">
     </div>
   </main>
+
+  <div id="gallery-lightbox" class="gallery-lightbox" aria-hidden="true" role="dialog" aria-label="Photo viewer">
+    <button type="button" class="lightbox-btn lightbox-close" aria-label="Close photo viewer">X</button>
+    <button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous photo">&lt;</button>
+    <img id="lightbox-image" class="lightbox-image" src="" alt="">
+    <button type="button" class="lightbox-btn lightbox-next" aria-label="Next photo">&gt;</button>
+  </div>
 
   <script src="script.js"></script>
 </body>

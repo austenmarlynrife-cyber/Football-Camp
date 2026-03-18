@@ -5,8 +5,39 @@ const scrollHeader = document.getElementById('scroll-header');
 const pageBody = document.body;
 const coverHero = document.querySelector('.cover-hero');
 const embeddedVideo = document.querySelector('[data-video-embed]');
+const scrollHeaderNav = document.querySelector('.scroll-header-nav');
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const campGallery = document.getElementById('camp-gallery');
+const galleryLightbox = document.getElementById('gallery-lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+const lightboxPrev = document.querySelector('.lightbox-prev');
+const lightboxNext = document.querySelector('.lightbox-next');
+const lightboxClose = document.querySelector('.lightbox-close');
 const isHomeCover = pageBody.classList.contains('home-cover');
 const bannerPinnedVisible = !isHomeCover && scrollBanner && scrollBanner.classList.contains('visible');
+
+const ensureNavLink = (navElement, href, label) => {
+  if (!navElement) return null;
+  const existing = Array.from(navElement.querySelectorAll('a')).find((link) => link.getAttribute('href') === href);
+  if (existing) return existing;
+  const link = document.createElement('a');
+  link.href = href;
+  link.textContent = label;
+  navElement.appendChild(link);
+  return link;
+};
+
+const donateMenuLink = ensureNavLink(slideoutMenu, 'donate.html', 'Donate');
+const donateHeaderLink = ensureNavLink(scrollHeaderNav, 'donate.html', 'Donate');
+
+if (currentPage.toLowerCase() === 'donate.html' && donateHeaderLink && scrollHeaderNav) {
+  Array.from(scrollHeaderNav.querySelectorAll('a')).forEach((link) => link.classList.remove('is-active'));
+  donateHeaderLink.classList.add('is-active');
+}
+
+if (currentPage.toLowerCase() === 'donate.html' && donateMenuLink && slideoutMenu) {
+  donateMenuLink.setAttribute('aria-current', 'page');
+}
 
 if (menuToggle && slideoutMenu) {
   menuToggle.addEventListener('click', () => {
@@ -43,6 +74,78 @@ if (embeddedVideo) {
 
     observer.observe(embeddedVideo);
   }
+}
+
+if (campGallery && galleryLightbox && lightboxImage) {
+  const galleryImages = Array.from(campGallery.querySelectorAll('img'));
+  let currentIndex = 0;
+
+  const renderLightboxImage = () => {
+    const activeImage = galleryImages[currentIndex];
+    if (!activeImage) return;
+    lightboxImage.src = activeImage.src;
+    lightboxImage.alt = activeImage.alt || 'Camp gallery photo';
+  };
+
+  const openLightbox = (startIndex) => {
+    currentIndex = startIndex;
+    renderLightboxImage();
+    galleryLightbox.classList.add('open');
+    galleryLightbox.setAttribute('aria-hidden', 'false');
+    pageBody.classList.add('lightbox-open');
+  };
+
+  const closeLightbox = () => {
+    galleryLightbox.classList.remove('open');
+    galleryLightbox.setAttribute('aria-hidden', 'true');
+    pageBody.classList.remove('lightbox-open');
+    lightboxImage.src = '';
+  };
+
+  const showPrevious = () => {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    renderLightboxImage();
+  };
+
+  const showNext = () => {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    renderLightboxImage();
+  };
+
+  galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+  });
+
+  if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', showPrevious);
+  }
+
+  if (lightboxNext) {
+    lightboxNext.addEventListener('click', showNext);
+  }
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  galleryLightbox.addEventListener('click', (event) => {
+    if (event.target === galleryLightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    const isOpen = galleryLightbox.classList.contains('open');
+    if (!isOpen) return;
+
+    if (event.key === 'Escape') {
+      closeLightbox();
+    } else if (event.key === 'ArrowLeft') {
+      showPrevious();
+    } else if (event.key === 'ArrowRight') {
+      showNext();
+    }
+  });
 }
 
 const onScroll = () => {
