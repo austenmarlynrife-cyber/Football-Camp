@@ -187,6 +187,10 @@ a {
   object-fit: contain;
 }
 
+.scroll-header-toggle {
+  display: none;
+}
+
 .scroll-header-nav {
   display: flex;
   align-items: center;
@@ -1166,24 +1170,57 @@ body.mobile-intro-dismissed .logo-wrap {
 
 @media (max-width: 900px) {
   .scroll-header {
-    gap: 4px;
-    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    padding: 8px 12px;
     min-height: 60px;
   }
 
   .scroll-header img {
-    left: 6px;
-    top: 58%;
-    height: 95px;
+    position: static;
+    transform: none;
+    height: 48px;
+    width: auto;
+    left: auto;
+    top: auto;
+    flex-shrink: 0;
   }
 
   .scroll-header-nav {
-    gap: 4px;
+    flex: 1;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .scroll-header-nav a:not([href="registration.html"]) {
+    display: none;
   }
 
   .scroll-header-nav a {
-    font-size: 0.78rem;
-    padding: 3px 5px;
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+
+  .scroll-header-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    padding: 6px 4px;
+    cursor: pointer;
+  }
+
+  .scroll-header-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #111111;
+    border-radius: 2px;
   }
 
 

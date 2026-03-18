@@ -44,12 +44,21 @@ if (currentPage.toLowerCase() === 'meet-coaches.html' && meetCoachesMenuLink && 
   meetCoachesMenuLink.setAttribute('aria-current', 'page');
 }
 
+const scrollHeaderToggle = document.querySelector('.scroll-header-toggle');
+
+const toggleMenu = (triggerBtn) => {
+  const isOpen = slideoutMenu.classList.toggle('open');
+  if (menuToggle) menuToggle.setAttribute('aria-expanded', String(isOpen));
+  if (scrollHeaderToggle) scrollHeaderToggle.setAttribute('aria-expanded', String(isOpen));
+  slideoutMenu.setAttribute('aria-hidden', String(!isOpen));
+};
+
 if (menuToggle && slideoutMenu) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = slideoutMenu.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-    slideoutMenu.setAttribute('aria-hidden', String(!isOpen));
-  });
+  menuToggle.addEventListener('click', () => toggleMenu(menuToggle));
+}
+
+if (scrollHeaderToggle && slideoutMenu) {
+  scrollHeaderToggle.addEventListener('click', () => toggleMenu(scrollHeaderToggle));
 }
 
 if (embeddedVideo) {
