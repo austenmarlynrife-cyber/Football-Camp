@@ -39,28 +39,183 @@
   </div>
 
   <main class="page-wrap">
-    <h1>Sponsor Registration</h1>
-    <p>Thank you for considering a company sponsorship for Red Eye River Football Camp. Sponsorships help fund camp access, equipment, shirts, and scholarships for local families.</p>
-
-    <div class="list-columns">
-      <section class="card">
-        <h3>How To Become A Sponsor</h3>
-        <ul>
-          <li>Review the Silver, Gold, and Platinum sponsorship levels.</li>
-          <li>Choose the level that fits your business goals and visibility preferences.</li>
-          <li>Reach out to confirm your sponsorship and next steps.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h3>Sponsorship Contact</h3>
-        <p>Contact Kim for sponsorship setup, payment coordination, and banner/logo details.</p>
-        <p><a class="btn btn-primary" href="tel:7403042996">Call Kim</a></p>
-        <p><a class="btn btn-primary" href="mailto:redeyeriverfootball@gmail.com">Email Sponsorship Team</a></p>
-      </section>
+    <div class="sponsor-registration-intro">
+      <p class="eyebrow">Company Sponsorship</p>
+      <h1>Sponsor Registration</h1>
+      <p>Thank you for supporting Red Eye River Football Camp. Use the form below to tell us about your business, choose your sponsorship level, share your website and logo, and let us know how you'd like to pay.</p>
+      <p class="sponsor-form-note">Sponsorship submissions are sent to the camp email team for follow-up. If you select pay by check or invoice, we will contact you with the next steps.</p>
     </div>
 
-    <p><a class="btn btn-primary registration-cta" href="donate.html#sponsorship-tiers">View Sponsorship Levels</a></p>
+    <div class="sponsor-registration-layout">
+      <section class="card sponsor-form-card">
+        <h2>Register To Become A Sponsor</h2>
+        <form class="sponsor-intake-form" action="https://formsubmit.co/redeyeriverfootball@gmail.com" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="New Red Eye River Football Camp Sponsor Registration">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <div class="form-grid two-column-grid">
+            <label>
+              <span>Company Name</span>
+              <input type="text" name="Company Name" required>
+            </label>
+            <label>
+              <span>Primary Contact Name</span>
+              <input type="text" name="Primary Contact Name" required>
+            </label>
+            <label>
+              <span>Contact Title</span>
+              <input type="text" name="Contact Title">
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="Email" required>
+            </label>
+            <label>
+              <span>Phone Number</span>
+              <input type="tel" name="Phone Number" required>
+            </label>
+            <label>
+              <span>Company Website</span>
+              <input type="url" name="Company Website" placeholder="https://yourcompany.com">
+            </label>
+            <label>
+              <span>Preferred Name For Website/Recognition</span>
+              <input type="text" name="Recognition Name" placeholder="How you want your company listed">
+            </label>
+            <label>
+              <span>Instagram or Facebook Handle</span>
+              <input type="text" name="Social Handle" placeholder="Optional">
+            </label>
+          </div>
+
+          <fieldset class="form-fieldset">
+            <legend>Sponsorship Level</legend>
+            <div class="radio-grid tier-radio-grid">
+              <label class="choice-card silver-tier">
+                <input type="radio" name="Sponsorship Tier" value="Silver - $250" checked>
+                <span class="choice-title">Silver</span>
+                <span class="choice-detail">$250</span>
+              </label>
+              <label class="choice-card gold-tier">
+                <input type="radio" name="Sponsorship Tier" value="Gold - $500">
+                <span class="choice-title">Gold</span>
+                <span class="choice-detail">$500</span>
+              </label>
+              <label class="choice-card platinum-tier">
+                <input type="radio" name="Sponsorship Tier" value="Platinum - $2000">
+                <span class="choice-title">Platinum</span>
+                <span class="choice-detail">$2000</span>
+              </label>
+              <label class="choice-card custom-tier-card">
+                <input type="radio" name="Sponsorship Tier" value="Custom Amount">
+                <span class="choice-title">Custom</span>
+                <span class="choice-detail">Choose your own amount</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-grid two-column-grid sponsor-custom-row">
+            <label>
+              <span>Custom Sponsorship Amount</span>
+              <input type="number" name="Custom Sponsorship Amount" min="1" step="1" placeholder="Enter amount if choosing custom">
+            </label>
+            <label>
+              <span>Need An Invoice or Receipt?</span>
+              <select name="Invoice or Receipt Needed">
+                <option value="No">No</option>
+                <option value="Invoice requested">Invoice requested</option>
+                <option value="Receipt requested">Receipt requested</option>
+                <option value="Both invoice and receipt">Both invoice and receipt</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-grid two-column-grid">
+            <label>
+              <span>Upload Company Logo</span>
+              <input type="file" name="Company Logo" accept=".png,.jpg,.jpeg,.svg,.pdf">
+            </label>
+            <label>
+              <span>Preferred Link Destination</span>
+              <input type="url" name="Preferred Link Destination" placeholder="Website or campaign URL">
+            </label>
+          </div>
+
+          <fieldset class="form-fieldset">
+            <legend>Preferred Payment Method</legend>
+            <div class="radio-grid payment-method-grid">
+              <label class="choice-card payment-choice-card">
+                <input type="radio" name="Preferred Payment Method" value="Square" checked>
+                <span class="choice-title">Square</span>
+                <span class="choice-detail">Fast online payment</span>
+              </label>
+              <label class="choice-card payment-choice-card">
+                <input type="radio" name="Preferred Payment Method" value="Venmo">
+                <span class="choice-title">Venmo</span>
+                <span class="choice-detail">Quick mobile payment</span>
+              </label>
+              <label class="choice-card payment-choice-card">
+                <input type="radio" name="Preferred Payment Method" value="Check">
+                <span class="choice-title">Check</span>
+                <span class="choice-detail">We will follow up with mailing details</span>
+              </label>
+              <label class="choice-card payment-choice-card">
+                <input type="radio" name="Preferred Payment Method" value="Need Invoice">
+                <span class="choice-title">Need Invoice</span>
+                <span class="choice-detail">Send me billing information first</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label>
+            <span>Notes, Special Requests, or Questions</span>
+            <textarea name="Notes" rows="5" placeholder="Tell us anything we should know about your sponsorship, logo, recognition, or billing."></textarea>
+          </label>
+
+          <label class="checkbox-row">
+            <input type="checkbox" name="Agrees To Follow-Up" value="Yes" required>
+            <span>I understand the camp team may contact me to confirm logo placement, sponsorship details, and payment follow-up.</span>
+          </label>
+
+          <div class="sponsor-form-actions">
+            <button class="btn btn-primary" type="submit">Send Sponsor Registration</button>
+            <a class="btn btn-secondary" href="donate.html#sponsorship-tiers">View Sponsorship Levels</a>
+          </div>
+        </form>
+      </section>
+
+      <aside class="sponsor-side-panel">
+        <section class="card sponsor-help-card">
+          <h3>What Companies Usually Want</h3>
+          <ul>
+            <li>Recognition name exactly as it should appear on the website and signage</li>
+            <li>A direct website link for online sponsor listings</li>
+            <li>A logo upload field so the camp team gets the correct artwork right away</li>
+            <li>Choice of payment method: Square, Venmo, check, or invoice</li>
+            <li>Receipt or invoice request for accounting purposes</li>
+          </ul>
+        </section>
+
+        <section class="card sponsor-payment-card">
+          <h3>Pay Now Options</h3>
+          <p>If you already know your sponsorship level and want to pay immediately, use one of the options below after submitting the form.</p>
+          <div class="donate-quick-actions sponsor-pay-actions">
+            <a class="btn btn-primary payment-btn venmo-btn" href="https://venmo.com/u/redeyeriverfootball" target="_blank" rel="noopener">
+              <img src="venmo-mark.svg" alt="Venmo">
+              <span>Pay via Venmo</span>
+            </a>
+            <a class="btn btn-primary payment-btn square-btn" href="https://square.link/u/2OfD3AMi" target="_blank" rel="noopener">
+              <img src="square-mark.svg" alt="Square">
+              <span>Pay via Square</span>
+            </a>
+          </div>
+          <p class="tier-note">Prefer to send a check? Select <strong>Check</strong> in the form and the camp team will follow up with mailing instructions.</p>
+          <p><a class="btn btn-primary" href="mailto:redeyeriverfootball@gmail.com">Email Sponsorship Team</a></p>
+          <p><a class="btn btn-primary" href="tel:7403042996">Call Kim</a></p>
+        </section>
+      </aside>
+    </div>
   </main>
 
   <script src="script.js"></script>

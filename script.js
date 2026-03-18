@@ -106,6 +106,24 @@ if (embeddedVideo) {
   }
 }
 
+const sponsorTierInputs = document.querySelectorAll('input[name="Sponsorship Tier"]');
+const customAmountInput = document.querySelector('input[name="Custom Sponsorship Amount"]');
+
+if (sponsorTierInputs.length && customAmountInput) {
+  const syncCustomAmountState = () => {
+    const selectedTier = Array.from(sponsorTierInputs).find((input) => input.checked);
+    const isCustom = Boolean(selectedTier && selectedTier.value === 'Custom Amount');
+    customAmountInput.disabled = !isCustom;
+    customAmountInput.required = isCustom;
+    if (!isCustom) {
+      customAmountInput.value = '';
+    }
+  };
+
+  sponsorTierInputs.forEach((input) => input.addEventListener('change', syncCustomAmountState));
+  syncCustomAmountState();
+}
+
 if (campGallery && galleryLightbox && lightboxImage) {
   const galleryImages = Array.from(campGallery.querySelectorAll('img'));
   let currentIndex = 0;

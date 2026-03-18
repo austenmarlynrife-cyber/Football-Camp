@@ -1050,6 +1050,187 @@ blockquote {
   box-shadow: 0 14px 30px rgba(255, 122, 24, 0.42);
 }
 
+.sponsor-registration-intro {
+  max-width: 860px;
+  margin-bottom: 26px;
+}
+
+.sponsor-form-note {
+  color: rgba(17, 17, 17, 0.72);
+}
+
+.sponsor-registration-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.sponsor-form-card {
+  padding: 26px;
+}
+
+.sponsor-intake-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.two-column-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sponsor-intake-form label,
+.form-fieldset {
+  display: grid;
+  gap: 8px;
+}
+
+.sponsor-intake-form label > span,
+.form-fieldset legend {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.06em;
+  font-size: 1.02rem;
+}
+
+.sponsor-intake-form input,
+.sponsor-intake-form select,
+.sponsor-intake-form textarea {
+  width: 100%;
+  border: 1px solid rgba(17, 17, 17, 0.18);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font: inherit;
+  background: #ffffff;
+}
+
+.sponsor-intake-form input[type="file"] {
+  padding: 10px 12px;
+}
+
+.sponsor-intake-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-fieldset {
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.radio-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.tier-radio-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.payment-method-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.choice-card {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  padding: 16px;
+  border: 1px solid rgba(17, 17, 17, 0.16);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.choice-card input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.choice-card:has(input:checked) {
+  outline: 2px solid #0f4cbe;
+  outline-offset: 2px;
+}
+
+.choice-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+}
+
+.choice-detail {
+  font-size: 0.95rem;
+}
+
+.custom-tier-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f4f1eb 100%);
+}
+
+.payment-choice-card {
+  background: #f8fafc;
+}
+
+.checkbox-row {
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 12px;
+}
+
+.checkbox-row input {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+}
+
+.sponsor-form-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.sponsor-side-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.sponsor-help-card ul,
+.sponsor-payment-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.sponsor-pay-actions {
+  margin-top: 16px;
+}
+
+.sponsor-custom-row input:disabled {
+  background: #f2f4f7;
+  color: rgba(17, 17, 17, 0.45);
+}
+
+@media (max-width: 900px) {
+  .sponsor-registration-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .two-column-grid,
+  .tier-radio-grid,
+  .payment-method-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-form-card {
+    padding: 18px;
+  }
+}
+
 .clean-sponsor-logos {
   align-items: center;
 }
