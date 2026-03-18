@@ -672,8 +672,8 @@ blockquote {
   }
 
   .cover-logo {
-    width: min(96vw, 86vh);
-    height: min(96vw, 86vh);
+    width: min(72vw, 72vh);
+    height: auto;
   }
 
   .cover-athlete {
@@ -745,3 +745,4 @@ blockquote {
     font-size: 1rem;
   }
 }
+
