@@ -285,6 +285,16 @@ a {
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.12));
 }
 
+.mobile-hero-video-wrap {
+  display: none;
+}
+
+.mobile-hero-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .cover-athlete {
   position: absolute;
   left: 50%;
@@ -1061,6 +1071,20 @@ body.lightbox-open {
   gap: 14px;
 }
 
+.registration-info-grid ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.registration-info-grid li {
+  margin-bottom: 12px;
+  line-height: 1.45;
+}
+
+.registration-info-grid li:last-child {
+  margin-bottom: 0;
+}
+
 .video-embed {
   width: min(860px, 100%);
   margin: 10px 0 20px;
@@ -1104,6 +1128,17 @@ body.lightbox-open {
   }
 }
 
+@keyframes mobile-video-intro-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 @media (max-width: 900px) {
   .scroll-header {
     gap: 4px;
@@ -1129,6 +1164,31 @@ body.lightbox-open {
 
   .logo-wrap {
     top: 8vh;
+  }
+
+  .hero-side-words {
+    display: none;
+  }
+
+  .mobile-hero-video-wrap {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+    background: #000000;
+    z-index: 90;
+    pointer-events: none;
+    animation: mobile-video-intro-out 0.85s ease 8s forwards;
+  }
+
+  .mobile-hero-video {
+    width: min(96vw, 645px);
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
   }
 
   .cover-logo {

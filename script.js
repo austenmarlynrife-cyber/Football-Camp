@@ -27,6 +27,7 @@ const ensureNavLink = (navElement, href, label) => {
   return link;
 };
 
+const meetCoachesMenuLink = ensureNavLink(slideoutMenu, 'meet-coaches.html', 'Meet Our Coaches');
 const donateMenuLink = ensureNavLink(slideoutMenu, 'donate.html', 'Donate');
 const donateHeaderLink = ensureNavLink(scrollHeaderNav, 'donate.html', 'Donate');
 
@@ -37,6 +38,10 @@ if (currentPage.toLowerCase() === 'donate.html' && donateHeaderLink && scrollHea
 
 if (currentPage.toLowerCase() === 'donate.html' && donateMenuLink && slideoutMenu) {
   donateMenuLink.setAttribute('aria-current', 'page');
+}
+
+if (currentPage.toLowerCase() === 'meet-coaches.html' && meetCoachesMenuLink && slideoutMenu) {
+  meetCoachesMenuLink.setAttribute('aria-current', 'page');
 }
 
 if (menuToggle && slideoutMenu) {
