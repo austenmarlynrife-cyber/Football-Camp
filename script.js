@@ -199,5 +199,14 @@ const onScroll = () => {
   }
 };
 
+if (isHomeCover) {
+  const dismissMobileIntro = () => {
+    if (window.innerWidth > 900 || window.scrollY <= 0) return;
+    pageBody.classList.add('mobile-intro-dismissed');
+  };
+
+  window.addEventListener('scroll', dismissMobileIntro, { passive: true });
+}
+
 window.addEventListener('scroll', onScroll);
 onScroll();

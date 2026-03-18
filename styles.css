@@ -285,6 +285,10 @@ a {
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.12));
 }
 
+.cover-logo-mobile {
+  display: none;
+}
+
 .mobile-hero-video-wrap {
   display: none;
 }
@@ -1150,6 +1154,16 @@ body.lightbox-open {
   }
 }
 
+body.mobile-intro-dismissed .mobile-hero-video-wrap {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.mobile-intro-dismissed .logo-wrap {
+  opacity: 1;
+  visibility: visible;
+}
+
 @media (max-width: 900px) {
   .scroll-header {
     gap: 4px;
@@ -1209,6 +1223,14 @@ body.lightbox-open {
   .cover-logo {
     width: min(86vw, 86vh);
     height: auto;
+  }
+
+  .cover-logo-desktop {
+    display: none;
+  }
+
+  .cover-logo-mobile {
+    display: block;
   }
 
   .cover-athlete {
