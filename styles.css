@@ -259,6 +259,85 @@ a {
   background: #ffffff;
 }
 
+.camp-dates-bar {
+  background: #0f1f3d;
+  color: #ffffff;
+  padding: 22px 24px;
+  width: 100%;
+}
+
+.camp-dates-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.camp-dates-label {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  color: #f0c040;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.camp-dates-list {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.camp-date-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+
+.camp-date-day {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+}
+
+.camp-date-detail {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.72);
+}
+
+.camp-date-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.22);
+  flex-shrink: 0;
+}
+
+.camp-dates-cta {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  background: #f0c040;
+  color: #0f1f3d;
+  padding: 8px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.18s ease;
+}
+
+.camp-dates-cta:hover {
+  background: #ffd966;
+}
+
 .cover-topline {
   width: fit-content;
   margin: 0 auto;
