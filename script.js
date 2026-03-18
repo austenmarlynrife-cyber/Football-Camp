@@ -30,10 +30,26 @@ const ensureNavLink = (navElement, href, label) => {
 const meetCoachesMenuLink = ensureNavLink(slideoutMenu, 'meet-coaches.html', 'Meet Our Coaches');
 const donateMenuLink = ensureNavLink(slideoutMenu, 'donate.html', 'Donate');
 const donateHeaderLink = ensureNavLink(scrollHeaderNav, 'donate.html', 'Donate');
+const meetCoachesHeaderLink = ensureNavLink(scrollHeaderNav, 'meet-coaches.html', 'Meet The Coaches');
+
+if (donateHeaderLink && scrollHeaderNav) {
+  donateHeaderLink.classList.add('banner-donate-link');
+  const registerHeaderLink = Array.from(scrollHeaderNav.querySelectorAll('a')).find(
+    (link) => (link.getAttribute('href') || '').toLowerCase() === 'registration.html'
+  );
+  if (registerHeaderLink && registerHeaderLink !== donateHeaderLink) {
+    scrollHeaderNav.insertBefore(donateHeaderLink, registerHeaderLink);
+  }
+}
 
 if (currentPage.toLowerCase() === 'donate.html' && donateHeaderLink && scrollHeaderNav) {
   Array.from(scrollHeaderNav.querySelectorAll('a')).forEach((link) => link.classList.remove('is-active'));
   donateHeaderLink.classList.add('is-active');
+}
+
+if (currentPage.toLowerCase() === 'meet-coaches.html' && meetCoachesHeaderLink && scrollHeaderNav) {
+  Array.from(scrollHeaderNav.querySelectorAll('a')).forEach((link) => link.classList.remove('is-active'));
+  meetCoachesHeaderLink.classList.add('is-active');
 }
 
 if (currentPage.toLowerCase() === 'donate.html' && donateMenuLink && slideoutMenu) {
