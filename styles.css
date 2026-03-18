@@ -1163,11 +1163,11 @@ body.lightbox-open {
 
 
   .logo-wrap {
-    top: 8vh;
+    display: none;
   }
 
   .hero-side-words {
-    display: none;
+    display: none !important;
   }
 
   .mobile-hero-video-wrap {
