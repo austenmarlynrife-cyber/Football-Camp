@@ -40,23 +40,70 @@
 
   <main class="page-wrap">
     <h1>Support The Camp</h1>
-    <p>Your donation helps us keep this camp accessible for families in our Northern Minnesota communities.</p>
+    <p>Your support keeps camp accessible for local families. Choose the option that fits you best: individual giving or company sponsorship.</p>
 
-    <div class="list-columns donate-options">
-      <section class="card donate-option">
-        <h3>Donate With Venmo</h3>
-        <p>Fast and mobile-friendly. Great for quick gifts during camp season.</p>
-        <p><a class="btn btn-primary" href="https://venmo.com/u/redeyeriverfootball" target="_blank" rel="noopener">Donate On Venmo</a></p>
-        <img class="donate-qr" src="Venmo QR Code.png" alt="Venmo QR code for Red Eye River Football Camp">
+    <div class="donate-quick-actions" aria-label="Quick donation options">
+      <a class="btn btn-primary payment-btn venmo-btn" href="https://venmo.com/u/redeyeriverfootball" target="_blank" rel="noopener">
+        <img src="venmo-mark.svg" alt="Venmo">
+        <span>Donate via Venmo</span>
+      </a>
+      <a class="btn btn-primary payment-btn square-btn" href="https://square.link/u/2OfD3AMi" target="_blank" rel="noopener">
+        <img src="square-mark.svg" alt="Square">
+        <span>Donate via Square</span>
+      </a>
+    </div>
+
+    <div class="list-columns donate-options support-path-grid">
+      <section class="card donate-option individual-donation">
+        <h3>Individual Donation</h3>
+        <p>Give any amount as an individual supporter. Use the quick donate buttons above for the fastest checkout.</p>
       </section>
 
-      <section class="card donate-option">
-        <h3>Donate With Square</h3>
-        <p>Best for donors who prefer card checkout and printable receipts.</p>
-        <p><a class="btn btn-primary" href="https://square.link/u/2OfD3AMi" target="_blank" rel="noopener">Donate With Square</a></p>
-        <p>Secure checkout powered by Square.</p>
+      <section class="card donate-option company-sponsorship">
+        <h3>Company Sponsorship</h3>
+        <p>Sponsor the camp as a business and receive recognition perks based on your sponsorship level.</p>
+        <p><a class="btn btn-primary sponsor-register-cta" href="sponsor-registration.html">Register To Become A Sponsor</a></p>
+        <p>See Sponsorship Tiers below</p>
       </section>
     </div>
+
+    <section id="sponsorship-tiers" class="sponsorship-tier-section">
+      <h2>Sponsorship Levels And Perks</h2>
+      <div class="list-columns sponsorship-tier-grid">
+        <a class="card sponsorship-tier-card silver-tier" href="sponsor-registration.html">
+          <h3>Silver Level</h3>
+          <p class="tier-price">$250</p>
+          <ul>
+            <li>Includes one individual 18" x 18" sponsorship sign.</li>
+            <li>Sign is placed along the football fence for all 3 days.</li>
+          </ul>
+        </a>
+
+        <a class="card sponsorship-tier-card gold-tier" href="sponsor-registration.html">
+          <h3>Gold Level</h3>
+          <p class="tier-price">$500</p>
+          <ul>
+            <li>Limited to 10 sponsors.</li>
+            <li>Highly visible position on the secondary camp banner.</li>
+            <li>BBQ with Andrew Van Ginkel in a private setting on July 16.</li>
+            <li>Each sponsorship includes 2 participants.</li>
+          </ul>
+        </a>
+
+        <a class="card sponsorship-tier-card platinum-tier" href="sponsor-registration.html">
+          <h3>Platinum Level</h3>
+          <p class="tier-price">$2000</p>
+          <ul>
+            <li>Limited to 5 sponsors.</li>
+            <li>Premium position on the main camp banner.</li>
+            <li>Featured placement on the website main page.</li>
+            <li>Golfing with Andrew Van Ginkel on July 17 at Bears Den Golf Course in Park Rapids.</li>
+            <li>BBQ with Andrew Van Ginkel in a private setting on July 16.</li>
+            <li>Each sponsorship includes 2 participants.</li>
+          </ul>
+        </a>
+      </div>
+    </section>
   </main>
 
   <script src="script.js"></script>

@@ -470,16 +470,201 @@ a {
   margin-top: 16px;
 }
 
-.donate-option {
-  min-height: 100%;
+.donate-quick-actions {
+  margin: 20px 0 10px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-.donate-qr {
-  width: min(230px, 100%);
-  height: auto;
-  margin-top: 8px;
-  border: 1px solid rgba(17, 17, 17, 0.18);
-  background: #ffffff;
+.payment-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 240px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: none;
+  box-shadow: 0 8px 22px rgba(17, 17, 17, 0.2);
+}
+
+.payment-btn img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.venmo-btn {
+  background: linear-gradient(135deg, #008cff, #0a6edb);
+}
+
+.square-btn {
+  background: linear-gradient(135deg, #171717, #2a2a2a);
+}
+
+.support-path-grid {
+  margin-bottom: 22px;
+}
+
+.donate-option {
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.donate-option::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(9, 16, 34, 0.5), rgba(12, 12, 12, 0.34));
+  z-index: 0;
+}
+
+.donate-option > * {
+  position: relative;
+  z-index: 1;
+}
+
+.donate-option h3,
+.donate-option p {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.individual-donation {
+  background-image: url("donate1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.company-sponsorship {
+  background-image: url("Sponsor golf.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.donate-option .btn {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+}
+
+.sponsorship-tier-section h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+#sponsorship-tiers {
+  scroll-margin-top: 90px;
+}
+
+.sponsorship-tier-grid {
+  align-items: start;
+}
+
+.sponsorship-tier-card {
+  min-height: 100%;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 16px;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
+}
+
+.sponsorship-tier-card::before {
+  content: "";
+  position: absolute;
+  inset: -120% 35% 100% -35%;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.4) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.45s ease;
+  transform: translateX(-18%) rotate(10deg);
+  pointer-events: none;
+}
+.sponsorship-tier-card:hover {
+  transform: translateY(-9px) scale(1.02);
+  filter: brightness(1.06) saturate(1.08);
+}
+
+.sponsorship-tier-card:hover::before {
+  opacity: 1;
+  transform: translateX(135%) rotate(10deg);
+}
+
+.sponsorship-tier-card h3,
+.sponsorship-tier-card li,
+.sponsorship-tier-card p {
+  position: relative;
+  z-index: 1;
+}
+
+.sponsorship-tier-card h3 {
+  margin: 0 0 10px;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.06em;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+}
+
+.tier-price {
+  margin: -4px 0 10px;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.06em;
+  font-size: clamp(1.62rem, 2.9vw, 2.2rem);
+}
+
+.silver-tier {
+  background: linear-gradient(145deg, #f4f5f7 0%, #d7dbe0 45%, #b7bdc6 100%);
+  border: 1px solid rgba(116, 124, 136, 0.55);
+  box-shadow: 0 10px 24px rgba(136, 142, 152, 0.2);
+}
+
+.silver-tier h3 {
+  color: #303641;
+}
+
+.gold-tier {
+  background: linear-gradient(145deg, #fff2b0 0%, #f1c75b 42%, #d7961d 100%);
+  border: 1px solid rgba(175, 120, 8, 0.55);
+  box-shadow: 0 10px 24px rgba(197, 145, 28, 0.24);
+}
+
+.gold-tier h3 {
+  color: #5e3900;
+}
+
+.platinum-tier {
+  background: linear-gradient(145deg, #f7fbff 0%, #dce4ef 32%, #bcc7d5 58%, #f6fbff 100%);
+  border: 1px solid rgba(138, 149, 167, 0.7);
+  box-shadow: 0 14px 32px rgba(151, 165, 184, 0.34);
+}
+
+.platinum-tier h3 {
+  color: #263243;
+}
+
+.platinum-tier::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.65), transparent 22%),
+    radial-gradient(circle at 82% 20%, rgba(255, 255, 255, 0.45), transparent 18%);
+  pointer-events: none;
+}
+
+.platinum-tier:hover {
+  box-shadow: 0 20px 42px rgba(151, 165, 184, 0.5), 0 0 26px rgba(211, 223, 238, 0.55);
+}
+
+.tier-note {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: rgba(17, 17, 17, 0.7);
 }
 
 .editorial-links {
@@ -710,6 +895,38 @@ blockquote {
   padding: 0;
 }
 
+.sponsor-page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.sponsor-page-heading h1 {
+  margin: 0;
+}
+
+.sponsor-register-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: none;
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, #f3b100 0%, #ff8a00 45%, #ff5b2e 100%);
+  box-shadow: 0 10px 26px rgba(255, 122, 24, 0.34);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: sponsor-cta-glow 1.8s ease-in-out infinite;
+}
+
+.sponsor-register-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(255, 122, 24, 0.42);
+}
+
 .clean-sponsor-logos {
   align-items: center;
 }
@@ -877,6 +1094,16 @@ body.lightbox-open {
   }
 }
 
+@keyframes sponsor-cta-glow {
+  0%,
+  100% {
+    box-shadow: 0 10px 26px rgba(255, 122, 24, 0.34);
+  }
+  50% {
+    box-shadow: 0 14px 34px rgba(255, 122, 24, 0.52);
+  }
+}
+
 @media (max-width: 900px) {
   .scroll-header {
     gap: 4px;
@@ -958,6 +1185,21 @@ body.lightbox-open {
 
   .sponsor-logos {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sponsor-page-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sponsor-register-cta {
+    width: 100%;
+    text-align: center;
+  }
+
+  .payment-btn {
+    width: 100%;
+    max-width: 380px;
   }
 
   .gallery-lightbox {
