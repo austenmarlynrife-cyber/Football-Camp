@@ -1139,6 +1139,17 @@ body.lightbox-open {
   }
 }
 
+@keyframes mobile-logo-reveal {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 @media (max-width: 900px) {
   .scroll-header {
     gap: 4px;
@@ -1163,7 +1174,11 @@ body.lightbox-open {
 
 
   .logo-wrap {
-    display: none;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+    animation: mobile-logo-reveal 0.45s ease 8.9s forwards;
   }
 
   .hero-side-words {
@@ -1192,7 +1207,7 @@ body.lightbox-open {
   }
 
   .cover-logo {
-    width: min(72vw, 72vh);
+    width: min(86vw, 86vh);
     height: auto;
   }
 
