@@ -109,6 +109,7 @@ if (embeddedVideo) {
 const sponsorTierInputs = document.querySelectorAll('input[name="Sponsorship Tier"]');
 const customAmountInput = document.querySelector('input[name="Custom Sponsorship Amount"]');
 const sponsorIntakeForm = document.querySelector('.sponsor-intake-form');
+const legacyCoachCards = document.querySelectorAll('.legacy-coach-card');
 
 if (sponsorTierInputs.length && customAmountInput) {
   const syncCustomAmountState = () => {
@@ -157,6 +158,24 @@ if (sponsorIntakeForm) {
 
       sponsorIntakeForm.submit();
     }
+  });
+}
+
+if (legacyCoachCards.length) {
+  legacyCoachCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const willFlipOpen = !card.classList.contains('is-flipped');
+
+      legacyCoachCards.forEach((otherCard) => {
+        otherCard.classList.remove('is-flipped');
+        otherCard.setAttribute('aria-pressed', 'false');
+      });
+
+      if (willFlipOpen) {
+        card.classList.add('is-flipped');
+        card.setAttribute('aria-pressed', 'true');
+      }
+    });
   });
 }
 

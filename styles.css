@@ -538,6 +538,18 @@ a {
   border: 2px solid var(--accent);
 }
 
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+}
+
+.tweet-fallback-note {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
 .btn-ghost {
   background: rgba(255, 255, 255, 0.85);
   border: 2px solid var(--ink);
@@ -831,11 +843,24 @@ a {
   transform: translateY(-1px);
 }
 
+.celebrity-coach-feature-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.celebrity-coach-feature-link:hover .celebrity-coach-feature,
+.celebrity-coach-feature-link:focus-visible .celebrity-coach-feature {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.34);
+}
+
 .celebrity-coach-feature {
   display: block;
   border: 1px solid rgba(255, 255, 255, 0.35);
   background: rgba(15, 18, 26, 0.52);
   padding: 18px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .celebrity-coach-copy h3 {
@@ -911,22 +936,115 @@ a {
 
 .legacy-coach-card {
   display: block;
+  width: 100%;
+  min-height: clamp(300px, 36vw, 420px);
+  padding: 0;
+  text-align: left;
+  color: inherit;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  perspective: 1200px;
+}
+
+.legacy-card-inner {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: inherit;
+  transform-style: preserve-3d;
+  transition: transform 0.58s cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.legacy-coach-card.is-flipped .legacy-card-inner {
+  transform: rotateY(180deg);
+}
+
+.legacy-card-face {
+  display: block;
+  position: absolute;
+  inset: 0;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(17, 17, 17, 0.16);
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  backface-visibility: hidden;
 }
 
-.legacy-coach-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.14);
+.legacy-card-front {
+  display: block;
+  z-index: 2;
 }
 
-.legacy-coach-card img {
+.legacy-card-back {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 16px;
+  background: linear-gradient(165deg, #ffffff 0%, #eef4ff 100%);
+  transform: rotateY(180deg);
+}
+
+.legacy-card-badge {
+  display: none;
+  width: fit-content;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #0f4cbe;
+  color: #ffffff;
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.legacy-card-back h3 {
+  margin: 4px 0 2px;
+  font-size: clamp(1.45rem, 2.2vw, 1.95rem);
+}
+
+.legacy-card-back p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.legacy-card-front img {
   width: 100%;
   height: clamp(220px, 30vw, 340px);
   object-fit: cover;
   display: block;
+}
+
+.legacy-card-front .legacy-coach-meta {
+  padding: 12px 12px 14px;
+}
+
+.legacy-card-front .legacy-coach-meta h3 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+}
+
+.legacy-card-front .legacy-coach-meta p {
+  margin: 4px 0 0;
+  font-size: 0.98rem;
+}
+
+.legacy-coach-card:focus-visible {
+  outline: 3px solid #0f4cbe;
+  outline-offset: 3px;
+}
+
+.legacy-coach-card:hover {
+  transform: translateY(-4px);
+}
+
+.legacy-coach-card:hover .legacy-card-face {
+  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.14);
+}
+
+@media (hover: none) {
+  .legacy-coach-card:hover {
+    transform: none;
+  }
 }
 
 .legacy-coach-meta {
@@ -1562,6 +1680,47 @@ body.lightbox-open {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+.tweet-embed-wrap {
+  max-width: 550px;
+  margin: 10px 0 24px;
+}
+
+.video-fallback-link {
+  position: relative;
+  display: block;
+  width: min(860px, 100%);
+  margin: 10px 0 20px;
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.video-fallback-link img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-fallback-overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #ffffff;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.video-fallback-link:hover .video-fallback-overlay,
+.video-fallback-link:focus-visible .video-fallback-overlay {
+  background: rgba(15, 76, 190, 0.85);
 }
 
 @keyframes rise-in {

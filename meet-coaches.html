@@ -42,13 +42,15 @@
         <p class="eyebrow">Featured Coach</p>
         <h2>Meet The Coaches</h2>
       </div>
-      <article class="celebrity-coach-feature">
-        <div class="celebrity-coach-copy">
-          <h3>Andrew Van Ginkel</h3>
-          <p class="celebrity-role">Celebrity Coach</p>
-          <p>NFL linebacker Andrew Van Ginkel brings high-energy instruction, leadership, and pro-level perspective to campers.</p>
-        </div>
-      </article>
+      <a class="celebrity-coach-feature-link" href="andrew-van-ginkel.html" aria-label="Open Andrew Van Ginkel video page">
+        <article class="celebrity-coach-feature">
+          <div class="celebrity-coach-copy">
+            <h3>Andrew Van Ginkel</h3>
+            <p class="celebrity-role">Celebrity Coach</p>
+            <p>NFL linebacker Andrew Van Ginkel brings high-energy instruction, leadership, and pro-level perspective to campers.</p>
+          </div>
+        </article>
+      </a>
     </section>
 
     <section class="content-section">
@@ -120,27 +122,106 @@
         <h2>Past Celebrity Coaches</h2>
       </div>
       <div class="legacy-coach-grid">
-        <a class="legacy-coach-card" href="kj-osborn.html">
-          <img src="KJ Pic.jpg" alt="KJ Osborn">
-          <div class="legacy-coach-meta">
-            <h3>KJ Osborn</h3>
-            <p>NFL Wide Receiver</p>
-          </div>
-        </a>
-        <a class="legacy-coach-card" href="john-randle.html">
-          <img src="John Randle1.jpg" alt="John Randle">
-          <div class="legacy-coach-meta">
-            <h3>John Randle</h3>
-            <p>Hall of Fame Defensive Tackle</p>
-          </div>
-        </a>
-        <a class="legacy-coach-card" href="harrison-phillips.html">
-          <img src="harrison philips photo 1.jpg" alt="Harrison Phillips">
-          <div class="legacy-coach-meta">
-            <h3>Harrison Phillips</h3>
-            <p>NFL Defensive Tackle</p>
-          </div>
-        </a>
+        <button class="legacy-coach-card" type="button" aria-pressed="false">
+          <span class="legacy-card-inner">
+            <span class="legacy-card-face legacy-card-front">
+              <img src="KJ Pic.jpg" alt="KJ Osborn">
+              <span class="legacy-coach-meta">
+                <h3>KJ Osborn</h3>
+                <p>NFL Wide Receiver</p>
+              </span>
+            </span>
+            <span class="legacy-card-face legacy-card-back">
+              <span class="legacy-card-badge">Baseball Card Stats</span>
+              <h3>KJ Osborn</h3>
+              <p>Position: WR</p>
+              <p>College: Buffalo and Miami (FL)</p>
+              <p>Draft: 2020, Round 5, Pick 176 (MIN)</p>
+              <p>Notable: 2021 season, 655 yds and 7 TD</p>
+              <p>Career: 165 rec, 1,902 yds, 16 TD</p>
+            </span>
+          </span>
+        </button>
+        <button class="legacy-coach-card" type="button" aria-pressed="false">
+          <span class="legacy-card-inner">
+            <span class="legacy-card-face legacy-card-front">
+              <img src="John Randle1.jpg" alt="John Randle">
+              <span class="legacy-coach-meta">
+                <h3>John Randle</h3>
+                <p>Hall of Fame Defensive Tackle</p>
+              </span>
+            </span>
+            <span class="legacy-card-face legacy-card-back">
+              <span class="legacy-card-badge">Baseball Card Stats</span>
+              <h3>John Randle</h3>
+              <p>Position: DT</p>
+              <p>College: Trinity Valley and Texas A&amp;I</p>
+              <p>Draft: 1990, Undrafted (signed by MIN)</p>
+              <p>Accolades: 7x Pro Bowl, 6x First-Team All-Pro</p>
+              <p>Career: 219 games, 137.5 sacks, Hall of Fame</p>
+            </span>
+          </span>
+        </button>
+        <button class="legacy-coach-card" type="button" aria-pressed="false">
+          <span class="legacy-card-inner">
+            <span class="legacy-card-face legacy-card-front">
+              <img src="harrison philips photo 1.jpg" alt="Harrison Phillips">
+              <span class="legacy-coach-meta">
+                <h3>Harrison Phillips</h3>
+                <p>NFL Defensive Tackle</p>
+              </span>
+            </span>
+            <span class="legacy-card-face legacy-card-back">
+              <span class="legacy-card-badge">Baseball Card Stats</span>
+              <h3>Harrison Phillips</h3>
+              <p>Position: NT</p>
+              <p>College: Stanford</p>
+              <p>Draft: 2018, Round 3, Pick 96 (BUF)</p>
+              <p>Notable: Career-high 92 tackles in 2023</p>
+              <p>Career: 374 tackles, 8.5 sacks</p>
+            </span>
+          </span>
+        </button>
+        <button class="legacy-coach-card" type="button" aria-pressed="false">
+          <span class="legacy-card-inner">
+            <span class="legacy-card-face legacy-card-front">
+              <img src="chuckforeman.jpg" alt="Chuck Foreman">
+              <span class="legacy-coach-meta">
+                <h3>Chuck Foreman</h3>
+                <p>Vikings Running Back</p>
+              </span>
+            </span>
+            <span class="legacy-card-face legacy-card-back">
+              <span class="legacy-card-badge">Baseball Card Stats</span>
+              <h3>Chuck Foreman</h3>
+              <p>Position: RB</p>
+              <p>College: Miami (FL)</p>
+              <p>Draft: 1973, Round 1, Pick 12 (MIN)</p>
+              <p>Accolades: NFL OROY, 5x Pro Bowl, 2x First-Team All-Pro</p>
+              <p>Career: 5,950 rush yds, 53 rush TD</p>
+            </span>
+          </span>
+        </button>
+        <button class="legacy-coach-card" type="button" aria-pressed="false">
+          <span class="legacy-card-inner">
+            <span class="legacy-card-face legacy-card-front">
+              <img src="teddybrown.jpg" alt="Ted Brown">
+              <span class="legacy-coach-meta">
+                <h3>Ted Brown</h3>
+                <p>Former Vikings Running Back</p>
+              </span>
+            </span>
+            <span class="legacy-card-face legacy-card-back">
+              <span class="legacy-card-badge">Baseball Card Stats</span>
+              <h3>Ted Brown</h3>
+              <p>Position: RB</p>
+              <p>NFL: Minnesota Vikings (1979 to 1986)</p>
+              <p>Draft: 1979, Round 1, Pick 16</p>
+              <p>Career: 4,546 rush yds, 40 rush TD</p>
+              <p>Honors: College Football Hall of Fame (2013)</p>
+            </span>
+          </span>
+        </button>
       </div>
     </section>
   </main>
