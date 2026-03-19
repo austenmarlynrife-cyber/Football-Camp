@@ -27,10 +27,10 @@ const ensureNavLink = (navElement, href, label) => {
   return link;
 };
 
-const meetCoachesMenuLink = ensureNavLink(slideoutMenu, 'meet-coaches.html', 'Meet Our Coaches');
+const meetCoachesMenuLink = ensureNavLink(slideoutMenu, 'meet-coaches.html', 'Meet The Coaches');
 const donateMenuLink = ensureNavLink(slideoutMenu, 'donate.html', 'Donate');
 const donateHeaderLink = ensureNavLink(scrollHeaderNav, 'donate.html', 'Donate');
-const meetCoachesHeaderLink = ensureNavLink(scrollHeaderNav, 'meet-coaches.html', 'Meet The Coaches');
+const meetCoachesHeaderLink = ensureNavLink(scrollHeaderNav, 'meet-coaches.html', 'Meet Coaches');
 
 if (donateHeaderLink && scrollHeaderNav) {
   donateHeaderLink.classList.add('banner-donate-link');
