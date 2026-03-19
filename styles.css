@@ -1210,6 +1210,45 @@ blockquote {
   margin-top: 16px;
 }
 
+.sponsor-submit-wrap {
+  max-width: 860px;
+}
+
+.sponsor-submit-card {
+  text-align: center;
+  padding: clamp(24px, 4vw, 42px);
+}
+
+.sponsor-submit-actions {
+  margin-top: 20px;
+}
+
+.sponsor-check-mailing {
+  margin: 22px auto 10px;
+  padding: 14px 16px;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  border-radius: 10px;
+  max-width: 420px;
+  background: #f8f9fb;
+}
+
+.sponsor-check-mailing h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.sponsor-check-mailing p {
+  margin: 0;
+}
+
+.sponsor-submit-links {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .sponsor-custom-row input:disabled {
   background: #f2f4f7;
   color: rgba(17, 17, 17, 0.45);

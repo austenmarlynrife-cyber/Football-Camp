@@ -49,7 +49,7 @@
     <div class="sponsor-registration-layout">
       <section class="card sponsor-form-card">
         <h2>Register To Become A Sponsor</h2>
-        <form class="sponsor-intake-form" action="https://script.google.com/macros/s/AKfycbzcF_T5N9Th7bYNjs6BwiiMLwZFDP6853nLwsCmuubexEE9EMsx3OwSX9z2uYpTZYXeEg/exec" method="POST" enctype="multipart/form-data">
+        <form class="sponsor-intake-form" action="https://script.google.com/macros/s/AKfycbzcF_T5N9Th7bYNjs6BwiiMLwZFDP6853nLwsCmuubexEE9EMsx3OwSX9z2uYpTZYXeEg/exec" method="POST" data-success-redirect="sponsor-submitted.html">
 
           <div class="form-grid two-column-grid">
             <label>
@@ -74,7 +74,7 @@
             </label>
             <label>
               <span>Company Website</span>
-              <input type="url" name="Company Website" placeholder="https://yourcompany.com">
+              <input type="text" name="Company Website" placeholder="Website, social page, or link">
             </label>
             <label>
               <span>Preferred Name For Website/Recognition</span>
@@ -127,11 +127,6 @@
               </select>
             </label>
           </div>
-
-          <label>
-            <span>Preferred Link Destination</span>
-            <input type="url" name="Preferred Link Destination" placeholder="Website or campaign URL">
-          </label>
 
           <div class="logo-email-section">
             <h3>Company Logo</h3>

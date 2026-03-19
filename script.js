@@ -108,6 +108,7 @@ if (embeddedVideo) {
 
 const sponsorTierInputs = document.querySelectorAll('input[name="Sponsorship Tier"]');
 const customAmountInput = document.querySelector('input[name="Custom Sponsorship Amount"]');
+const sponsorIntakeForm = document.querySelector('.sponsor-intake-form');
 
 if (sponsorTierInputs.length && customAmountInput) {
   const syncCustomAmountState = () => {
@@ -122,6 +123,41 @@ if (sponsorTierInputs.length && customAmountInput) {
 
   sponsorTierInputs.forEach((input) => input.addEventListener('change', syncCustomAmountState));
   syncCustomAmountState();
+}
+
+if (sponsorIntakeForm) {
+  sponsorIntakeForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const endpoint = sponsorIntakeForm.getAttribute('action');
+    if (!endpoint) return;
+
+    const submitButton = sponsorIntakeForm.querySelector('button[type="submit"]');
+    const defaultButtonText = submitButton ? submitButton.textContent : '';
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
+    }
+
+    try {
+      await fetch(endpoint, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new FormData(sponsorIntakeForm)
+      });
+
+      const redirectTarget = sponsorIntakeForm.getAttribute('data-success-redirect') || 'sponsor-submitted.html';
+      window.location.href = redirectTarget;
+    } catch (error) {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = defaultButtonText || 'Send Sponsor Registration';
+      }
+
+      sponsorIntakeForm.submit();
+    }
+  });
 }
 
 if (campGallery && galleryLightbox && lightboxImage) {
