@@ -27,10 +27,33 @@ const ensureNavLink = (navElement, href, label) => {
   return link;
 };
 
+const ensureScrollHeaderToggle = (headerElement) => {
+  if (!headerElement) return null;
+
+  const existingToggle = headerElement.querySelector('.scroll-header-toggle');
+  if (existingToggle) return existingToggle;
+
+  const toggleButton = document.createElement('button');
+  toggleButton.type = 'button';
+  toggleButton.className = 'scroll-header-toggle';
+  toggleButton.setAttribute('aria-label', 'Open menu');
+  toggleButton.setAttribute('aria-expanded', 'false');
+  toggleButton.setAttribute('aria-controls', 'main-menu');
+  toggleButton.innerHTML = '<span></span><span></span><span></span>';
+  headerElement.appendChild(toggleButton);
+  return toggleButton;
+};
+
+const registrationMenuLink = ensureNavLink(slideoutMenu, 'registration.html', 'Register Now');
 const meetCoachesMenuLink = ensureNavLink(slideoutMenu, 'meet-coaches.html', 'Meet The Coaches');
 const donateMenuLink = ensureNavLink(slideoutMenu, 'donate.html', 'Donate');
+const scrollHeaderToggle = ensureScrollHeaderToggle(scrollHeader);
 const donateHeaderLink = ensureNavLink(scrollHeaderNav, 'donate.html', 'Donate');
 const meetCoachesHeaderLink = ensureNavLink(scrollHeaderNav, 'meet-coaches.html', 'Meet Coaches');
+
+if (registrationMenuLink) {
+  registrationMenuLink.textContent = 'Register Now';
+}
 
 if (donateHeaderLink && scrollHeaderNav) {
   donateHeaderLink.classList.add('banner-donate-link');
@@ -59,8 +82,6 @@ if (currentPage.toLowerCase() === 'donate.html' && donateMenuLink && slideoutMen
 if (currentPage.toLowerCase() === 'meet-coaches.html' && meetCoachesMenuLink && slideoutMenu) {
   meetCoachesMenuLink.setAttribute('aria-current', 'page');
 }
-
-const scrollHeaderToggle = document.querySelector('.scroll-header-toggle');
 
 const toggleMenu = (triggerBtn) => {
   const isOpen = slideoutMenu.classList.toggle('open');
