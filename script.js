@@ -44,7 +44,7 @@ const ensureScrollHeaderToggle = (headerElement) => {
   return toggleButton;
 };
 
-const registrationMenuLink = ensureNavLink(slideoutMenu, 'registration.html', 'Register Now');
+const registrationMenuLink = ensureNavLink(slideoutMenu, 'camp-cancelled.html', 'Register Now');
 const meetCoachesMenuLink = ensureNavLink(slideoutMenu, 'meet-coaches.html', 'Meet The Coaches');
 const donateMenuLink = ensureNavLink(slideoutMenu, 'donate.html', 'Donate');
 const scrollHeaderToggle = ensureScrollHeaderToggle(scrollHeader);
@@ -58,7 +58,7 @@ if (registrationMenuLink) {
 if (donateHeaderLink && scrollHeaderNav) {
   donateHeaderLink.classList.add('banner-donate-link');
   const registerHeaderLink = Array.from(scrollHeaderNav.querySelectorAll('a')).find(
-    (link) => (link.getAttribute('href') || '').toLowerCase() === 'registration.html'
+    (link) => (link.getAttribute('href') || '').toLowerCase() === 'camp-cancelled.html'
   );
   if (registerHeaderLink && registerHeaderLink !== donateHeaderLink) {
     scrollHeaderNav.insertBefore(donateHeaderLink, registerHeaderLink);
